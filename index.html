@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LOFI Microbit Controller</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: 'Arial', sans-serif; text-align: center; background: #2c3e50; color: white; }
+        .grid { display: grid; grid-template-columns: repeat(3, 80px); gap: 15px; justify-content: center; margin-top: 50px; }
+        button { padding: 20px; font-size: 20px; border-radius: 10px; border: none; cursor: pointer; }
+        #connect { background: #27ae60; color: white; margin-bottom: 20px; }
+        .dir { background: #3498db; color: white; }
+        .stop { background: #e74c3c; color: white; }
+    </style>
+</head>
+<body>
+    <h1>LOFI ROBOT</h1>
+    <button id="connect">Pair Micro:bit</button>
+
+    <div class="grid">
+        <div></div><button class="dir" onmousedown="send('F')" onmouseup="send('S')">▲</button><div></div>
+        <button class="dir" onmousedown="send('L')" onmouseup="send('S')">◀</button>
+        <button class="stop" onclick="send('S')">■</button>
+        <button class="dir" onmousedown="send('R')" onmouseup="send('S')">▶</button>
+        <div></div><button class="dir" onmousedown="send('B')" onmouseup="send('S')">▼</button><div></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
